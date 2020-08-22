@@ -1,0 +1,102 @@
+body {
+    background-color: #D3D6F0;
+    color: #8F7F56;
+}
+
+h5 {
+    width: 100%;
+    color: #8F7F56;
+    background-color: #9fa2b8;
+    text-align: center;
+    font-size: 2rem;
+    position: fixed;    
+    height: 50px;
+    line-height: 150%;
+    z-index: 2;
+}
+
+h2 {
+    width: 100%;
+    margin-top: 55px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.row {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.cx-acompanhamento{
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+#lb-acompanhamento {
+    margin-bottom: 0px;
+    margin-left: 1%;
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.bnt-calc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#botaoCalcular {
+    width: 30%
+}
+
+.cx-input{
+    border: 1px solid purple;
+    padding: 3% 3% 0 3%;
+    border-radius: 15px;
+}
+
+.cx-resultado {
+    background-color: purple;
+    color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    padding: 2%;
+}
+
+#resultado-input {
+    display: none;
+}
+
+#spinner-calc {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cx-dicas {
+        display: none;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: rgb(180, 176, 169);
+    font: 12px verdana, arial, sans-serif;
+ }
+ 
+ :-moz-placeholder {
+    color: rgb(180, 176, 169);
+    font: 12px verdana, arial, sans-serif;
+ }
+ 
+ ::-moz-placeholder {
+    color: rgb(180, 176, 169);
+    font: 12px verdana, arial, sans-serif;
+ }
+ 
+ :-ms-input-placeholder {  
+    color: rgb(180, 176, 169);
+    font: 12px verdana, arial, sans-serif;
+ }

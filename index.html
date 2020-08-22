@@ -3,57 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+
     <link rel="stylesheet" type="text/css" href="./src/main.css" />
     <title>Gama Academy - Calculadora de churrasco</title>
   </head>
   <body>
-    <header>
+    <header class="row col-12">
       <h5>GAMA ACADEMY</h5>
       <h2>Calculadora de Churrasco</h2>
     </header>
 
-    <div>
-      <label for="mulheres-qnt">Mulheres</label>
-      <input id="mulheres-qnt" type="text" />
+    <div class="container">
+      <div class="cx-input">
+        <div class="row col-12">
+          <div class="row">
+            <div class="col-sm-12 col-md-4">
+              <label for="mulheres-qnt">Mulheres</label>
+              <input id="mulheres-qnt" type="text" />
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <label for="homens-qnt">Homens&nbsp&nbsp</label>
+              <input id="homens-qnt" type="text" />
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <label for="criancas-qnt">Crianças&nbsp&nbsp</label>
+              <input id="criancas-qnt" type="text" />
+            </div>  
+          </div>
 
-      <label for="homens-qnt">Homens</label>
-      <input id="homens-qnt" type="text" />
-
-      <label for="criancas-qnt">Crianças</label>
-      <input id="criancas-qnt" type="text" />
+          <br>
+          <div class="row col-12 cx-acompanhamento">
+            <input id="acompanhamentos" type="checkbox" />
+            <label for="acompanhamentos" id="lb-acompanhamento">acompanhamentos</label>
+          </div>    
+        </div>
+        <div class="row col-12">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <label for="bebidas-alcoolicas">Bebidas alcoolicas</label>
+              <input id="bebidas-alcoolicas" type="text" />
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label for="bebidas-nao-alcoolicas">Bebidas não alcoolicas</label>
+              <input id="bebidas-nao-alcoolicas" type="text" />
+            </div>
+          </div>     
+        </div>
+        <div class="row col-12 cx-vegetarianos">
+          <label for="vegetarianos" id="lb-acompanhamento">Vegetarianos&nbsp&nbsp </label>
+          <input id="vegetarianos" type="text" />
+        </div>  
+      </div>  
       <br>
-      <label for="acompanhamentos">acompanhamentos</label>
-      <input id="acompanhamentos" type="checkbox" />
-    </div>
-    <div>
-      <label for="bebidas-alcoolicas">Bebidas alcoolicas</label>
-      <input id="bebidas-alcoolicas" type="text" />
-
-      <label for="bebidas-nao-alcoolicas">Bebidas não alcoolicas</label>
-      <input id="bebidas-nao-alcoolicas" type="text" />
-    </div>
-    <br>
-    <button id="botaoCalcular">Calcular</button>
-
-      <div>
-        <div>
-          <label for="total-carne" id="total-carne"></label>
+      <div class="row col-12 bnt-calc"> 
+        <button class="btn btn-dark" id="botaoCalcular">Calcular</button>
+        <div id="spinner-calc" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
         </div>
-        <div>
-          <label for="total-pessoas" id="total-pessoas"></label>
-        </div>
-        <div>
-          <label for="total-acompanhamento" id="total-acompanhamento"></label>
-        </div>
-        <div>
-          <label for="total-bebidas-nao-alcoolicas" id="total-bebidas-nao-alcoolicas"></label>
-        </div>
-        <div>
-          <label for="total-bebidas-alcoolicas" id="total-bebidas-alcoolicas"></label>
-        </div>
-        <div>
       </div>
-    </div>
+
+      
+      <div class="container" id="resultado-input">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 cx-resultado">
+            <div>
+              <div>
+                <label for="total-pessoas" id="total-pessoas"></label>
+              </div>          
+              <div>
+                <label for="total-carne" id="total-carne"></label>
+              </div>
+              <div>
+                <label for="total-acompanhamento" id="total-acompanhamento"></label>
+              </div>
+              <div>
+                <label for="total-bebidas-nao-alcoolicas" id="total-bebidas-nao-alcoolicas"></label>
+              </div>
+              <div>
+                <label for="total-bebidas-alcoolicas" id="total-bebidas-alcoolicas"></label>
+              </div>
+              <div>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-5 cx-resultado cx-dicas">
+            <h4> Aqui vai algumas dicas: </h3>
+            <ul>
+              <li> Compre a cerveja antes para dar tempo de gelar </li>
+              <li> Não se esqueça do tempero dacarne e do carvão </li>
+              <li> Em época de Covid, evite aglomerações! </li>
+            </ul>     
+          </div> 
+        </div>
+      </div> 
+      </div>
+
+    <!-- Bootstrap script-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>          
     <script src="./src/main.js"></script>
   </body>
 </html>

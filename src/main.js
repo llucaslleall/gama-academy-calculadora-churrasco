@@ -1,13 +1,16 @@
 const botao = document.querySelector("#botaoCalcular")
 
 const calcularChurrasco = () => {
+    document.getElementById("botaoCalcular").style.display = 'none';
+    document.getElementById("resultado-input").style.display = 'none';
+    document.getElementById("spinner-calc").style.display = 'inline';
 
     // Coleta valor dos inputs
     const mulheres = document.getElementById('mulheres-qnt').value;
     const homens = document.getElementById('homens-qnt').value;
     const criancas = document.getElementById('criancas-qnt').value;
 
-    const acompanhamentos = document.getElementById('acompanhamentos').value;
+    const acompanhamentos = document.getElementById('acompanhamentos').checked;
     const bebidasAlcoolicas = document.getElementById('bebidas-alcoolicas').value;
     const bebidasNaoAlcoolicas = document.getElementById('bebidas-nao-alcoolicas').value;
 
@@ -27,13 +30,31 @@ const calcularChurrasco = () => {
     // 500ml de bebida alcoolica para cada pessoa :'D
     const totalBebidasAlcoolicas = bebidasAlcoolicas ? 500 * Number(bebidasAlcoolicas) : 0
 
+    setTimeout(() => {  
+        document.getElementById("resultado-input").style.display = 'inline';  
+        document.getElementById("spinner-calc").style.display = 'none';
+        document.getElementById("botaoCalcular").style.display = 'inline'; 
+        }, 500);
     
+    document.getElementById("total-carne").innerHTML = `<li>${getValueMeasure(totalCarne, 1)} de carne</li>`
+    document.getElementById("total-pessoas").innerHTML = `<p> Para ${totalPessoas} pessoas, é necessário: </p>`
+    document.getElementById("total-acompanhamento").innerHTML = `<li> ${getValueMeasure(totalAcompanhamento, 1)} de acompanhamento </li>`
+    document.getElementById("total-bebidas-nao-alcoolicas").innerHTML = `<li> ${getValueMeasure(totalBebidasNaoAlcoolicas, 2)} de bebidas alcoolicas </li>`
+    document.getElementById("total-bebidas-alcoolicas").innerHTML = `<li> ${getValueMeasure(totalBebidasAlcoolicas, 2)} de bebidas não alcoolicas </li>`
 
-    document.getElementById("total-carne").innerHTML = `${getValueMeasure(totalCarne, 1)}`
-    document.getElementById("total-pessoas").innerHTML = `${totalPessoas} pessoas`
-    document.getElementById("total-acompanhamento").innerHTML = `${getValueMeasure(totalAcompanhamento, 1)}`
-    document.getElementById("total-bebidas-nao-alcoolicas").innerHTML = `${getValueMeasure(totalBebidasNaoAlcoolicas, 2)}`
-    document.getElementById("total-bebidas-alcoolicas").innerHTML = `${getValueMeasure(totalBebidasAlcoolicas, 2)}`
+    document.getElementById('mulheres-qnt').value = '';
+    document.getElementById('mulheres-qnt').placeholder = mulheres;
+    document.getElementById('homens-qnt').value = '';
+    document.getElementById('homens-qnt').placeholder = homens;
+    document.getElementById('criancas-qnt').value = '';
+    document.getElementById('criancas-qnt').placeholder = criancas;
+    document.getElementById('acompanhamentos').checked = false;
+    document.getElementById('bebidas-alcoolicas').value = '';
+    document.getElementById('bebidas-alcoolicas').placeholder = bebidasAlcoolicas;
+    document.getElementById('bebidas-nao-alcoolicas').value = '';
+    document.getElementById('bebidas-nao-alcoolicas').placeholder = bebidasAlcoolicas;
+
+
 
 }
 
