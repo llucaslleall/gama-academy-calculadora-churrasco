@@ -14,15 +14,21 @@ const calcularChurrasco = () => {
     const bebidasAlcoolicas = document.getElementById('bebidas-alcoolicas').value;
     const bebidasNaoAlcoolicas = document.getElementById('bebidas-nao-alcoolicas').value;
 
+    // Vegetarianos
+    const vegetarianos = document.getElementById('vegetarianos').value;
+
 
     // Logica de valores por grama e multiplicacao da quantidade de pessoas
-    let totalCarne = mulheres * 150 + homens * 200 + criancas * 100
+    var totalCarne = mulheres * 150 + homens * 200 + criancas * 100 - 150*vegetarianos
+    if (totalCarne < 0) {
+        totalCarne = 0
+    }
 
     // Soma da quantidade de pessoas
     const totalPessoas = Number(mulheres) + Number(homens) + Number(criancas)
     
     // 50g de acompanhamento por pessoa
-    const totalAcompanhamento = acompanhamentos ? 50 * Number(totalPessoas) : 0
+    const totalAcompanhamento = acompanhamentos ? 50 * Number(totalPessoas) + 10 * Number(vegetarianos) : 0
     
     // 400ml de bebida nao alcoolica para cada pessoa
     const totalBebidasNaoAlcoolicas = bebidasNaoAlcoolicas ? 500 * Number(bebidasNaoAlcoolicas) : 0
@@ -53,6 +59,8 @@ const calcularChurrasco = () => {
     document.getElementById('bebidas-alcoolicas').placeholder = bebidasAlcoolicas;
     document.getElementById('bebidas-nao-alcoolicas').value = '';
     document.getElementById('bebidas-nao-alcoolicas').placeholder = bebidasAlcoolicas;
+    document.getElementById('vegetarianos').value = '';
+    document.getElementById('vegetarianos').placeholder = vegetarianos;
 
 
 
